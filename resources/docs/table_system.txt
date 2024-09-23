@@ -1,0 +1,80 @@
+users = [
+    id,
+    name,
+    email,
+    email_verified_at,
+    password,
+    remember_token,
+    created_at,
+    updated_at
+]
+
+category = [
+    id,
+    identification,
+    value (Limitar gasto na categoria),
+    color,
+    category_id,
+    user_id,
+    created_at,
+    updated_at
+]
+
+financial_movement_category = [
+    id,
+    category_id,
+    financial_movement_id,
+    created_at,
+    updated_at
+]
+
+financial_institution = [
+    id,
+    identification,
+    balance (Saldo),
+    date,
+    description,
+    type,
+    user_id,
+    created_at,
+    updated_at
+]
+
+financial_card = [
+    id,
+    identification,
+    limit (Valor Limite),
+    due_date (dia do Vencimento),
+    financial_institution_id,
+    created_at,
+    updated_at
+]
+
+financial_planning = [
+    id,
+    identification,
+    total_value(Valor Final),
+    end_date (Data Final),
+    created_at,
+    updated_at
+]
+
+financial_movement = [
+    id,
+    identification,
+    date,
+    value (Valor),
+    period_qty (Qtd Periodo),
+    description,
+    type = [],
+    period = [],
+    situation = [],
+    metod = [],
+    financial_movement_id,
+    card_id,
+    source_account_id,
+    destination_account_id,
+    user_id,
+    created_at,
+    updated_at
+]
