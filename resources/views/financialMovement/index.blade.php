@@ -1,7 +1,8 @@
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cartões Conta bancaria') }}
+            {{ __('Movimentação Financeira') }}
         </h2>
     </x-slot>
 
@@ -9,7 +10,7 @@
         <div class="row justify-content-end mt-2 mb-2">
             <div class="col-12 text-end">
                 {{-- <button type="button" class="btn btn-primary">Adicionar</button> --}}
-                <a href=" {{ route('cardBankAccount.create') }}" class="btn btn-primary">Adicionar</a>
+                <a href=" {{ route('financialMovement.create') }}" class="btn btn-primary">Adicionar</a>
             </div>
         </div>
 
@@ -19,24 +20,26 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Identificação</th>
-                            <th scope="col">Limite</th>
-                            <th scope="col">Dia de vencimento</th>
+                            <th scope="col">Instituição</th>
+                            <th scope="col">Saldo</th>
+                            <th scope="col">Valor Total</th>
+                            <th scope="col">Data Conclusão</th>
                             <th scope="col">Ação</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($collectionCardBankAccount as $objCardBankAccount)
+                        {{-- @foreach($collectionBankAccount as $objBankAccount)
                         <tr>
-                            <th scope="row">{{ $objCardBankAccount->id }}</th>
-                            <td>{{ $objCardBankAccount->identification }}</td>
-                            <td>{{ $objCardBankAccount->limit }}</td>
-                            <td>{{ $objCardBankAccount->credit_card_expiration }}</td>
-                            <td class="d-flex">
+                            <th scope="row">{{ $objBankAccount->id }}</th>
+                            <td>{{ $objBankAccount->institution }}</td>
+                            <td>{{ $objBankAccount->balance }}</td>
+                            <td>{{ $objBankAccount->total_value }}</td>
+                            <td>{{ $objBankAccount->completion_date }}</td>
+                            <td>
                                 <button type="button" class="btn btn-outline-primary btn-sm">
                                     <span class="material-icons">edit</span>
                                 </button>
-                                <form action="{{ route('cardBankAccount.destroy', $objCardBankAccount->id) }}" method="post">
+                                <form action="{{ route('bankAccount.destroy', $objBankAccount->id) }}" method="post">
                                     @csrf @method('DELETE')
                                     <button class="btn btn-outline-primary btn-sm">
                                         <span class="material-icons">delete</span>
@@ -44,11 +47,10 @@
                                 </form>
                             </td>
                         </tr>
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 </x-app-layout>

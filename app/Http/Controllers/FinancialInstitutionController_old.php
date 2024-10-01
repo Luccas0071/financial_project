@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FinancialInstitution;
+use App\Models\FinancialAccount;
 use App\Models\User;
 use Dotenv\Parser\Value;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class FinancialInstitutionController extends Controller
+class FinancialAccountController extends Controller
 {
     public function index(Request $request)
     {
@@ -22,18 +22,18 @@ class FinancialInstitutionController extends Controller
         $messageSuccess = session('message.success');
         
         // 3° Criar uma query, para aplicar mais opções
-        $collectionFinancialInstitution = array();
-        // $collectionFinancialInstitution = FinancialInstitution::query()->orderBy('institution')->get();
+        $collectionFinancialAccount = array();
+        // $collectionFinancialAccount = FinancialAccount::query()->orderBy('account')->get();
         
         
-        return view('financialInstitution.index')
-            ->with('collectionFinancialInstitution', $collectionFinancialInstitution);
+        return view('financialAccount.index')
+            ->with('collectionFinancialAccount', $collectionFinancialAccount);
             // ->with('messageSuccess', $messageSuccess);
     }
 
     public function create()
     {
-        return view('financialInstitution.create');
+        return view('financialAccount.create');
     }
 
     public function store(Request $request)

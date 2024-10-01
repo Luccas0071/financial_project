@@ -1,3 +1,28 @@
+app/
+├── Http/
+│   └── Controllers/
+│       └── UserController.php
+├── Models/
+│   └── User.php
+├── Providers/
+│   └── AppServiceProvider.php
+├── Repositories/
+│   └── UserRepositoryInterface.php
+│   └── UserRepository.php
+└── Services/
+    └── UserService.php
+
+#Repository
+Crie um Repository que será responsável pela comunicação direta com o modelo e banco de dados.
+
+#Service 
+A Service vai fazer a comunicação com o Repository, adicionando regras de negócio ou lógica adicional.
+
+#Controller
+O Controller interage com o Service para atender as solicitações da aplicação.
+
+
+
 users = [
     id,
     name,
@@ -31,10 +56,18 @@ financial_movement_category = [
 financial_institution = [
     id,
     identification,
-    balance (Saldo),
-    date,
-    description,
+    cnpj,
     type,
+    created_at,
+    updated_at
+]
+financial_account = [
+    id,
+    identification,
+    institution,
+    balance (Saldo),
+    type,
+    description,
     user_id,
     created_at,
     updated_at
@@ -43,7 +76,8 @@ financial_institution = [
 financial_card = [
     id,
     identification,
-    limit (Valor Limite),
+    balance (Valor Gasto ate o momento),
+    limit (Valor Limite Cartão),
     due_date (dia do Vencimento),
     financial_institution_id,
     created_at,
@@ -78,3 +112,6 @@ financial_movement = [
     created_at,
     updated_at
 ]
+
+
+Rostinguer

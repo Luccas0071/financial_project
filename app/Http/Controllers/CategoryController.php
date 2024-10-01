@@ -9,7 +9,7 @@ class CategoryController extends Controller
     //Exibe uma lista de recursos
     public function index()
     {
-        return view('category.list');
+        return view('category.index');
     }
 
     //Exibe o formulário para criar um novo recurso

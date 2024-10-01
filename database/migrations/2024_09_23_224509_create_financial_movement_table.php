@@ -27,8 +27,9 @@ class CreateFinancialMovementTable extends Migration
 
             $table->unsignedBigInteger('financial_movement_id')->nullable();
             $table->unsignedBigInteger('financial_card_id')->nullable();
-            $table->unsignedBigInteger('source_financial_institution_id')->nullable();
-            $table->unsignedBigInteger('destination_financial_institution_id')->nullable();
+            $table->unsignedBigInteger('financial_account_id')->nullable();
+            $table->unsignedBigInteger('source_financial_account_id')->nullable();
+            $table->unsignedBigInteger('destination_financial_account_id')->nullable();
             $table->unsignedBigInteger('user_id');
 
             $table->foreign('financial_movement_id')
@@ -41,14 +42,19 @@ class CreateFinancialMovementTable extends Migration
                     ->on('financial_card')
                     ->onDelete('restrict');
 
-            $table->foreign('source_financial_institution_id')
+            $table->foreign('financial_account_id')
                     ->references('id')
-                    ->on('financial_institution')
+                    ->on('financial_account')
                     ->onDelete('restrict');
 
-            $table->foreign('destination_financial_institution_id')
+            $table->foreign('source_financial_account_id')
                     ->references('id')
-                    ->on('financial_institution')
+                    ->on('financial_account')
+                    ->onDelete('restrict');
+
+            $table->foreign('destination_financial_account_id')
+                    ->references('id')
+                    ->on('financial_account')
                     ->onDelete('restrict');
 
             $table->foreign('user_id')

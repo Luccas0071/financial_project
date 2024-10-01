@@ -15,13 +15,13 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('transaction.index')" :active="request()->routeIs('transaction')">
+                    <x-nav-link :href="route('financialMovement.index')" :active="request()->routeIs('financialMovement')">
                         {{ __('Movimentação') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('financialInstitution.index')" :active="request()->routeIs('financialInstitution')">
-                        {{ __('Instituição') }}
+                    <x-nav-link :href="route('financialAccount.index')" :active="request()->routeIs('financialAccount')">
+                        {{ __('Conta') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('cardBankAccount.index')" :active="request()->routeIs('card')">
+                    <x-nav-link :href="route('financialPlanning.index')" :active="request()->routeIs('financialPlanning')">
                         {{ __('Planejamento') }}
                     </x-nav-link>
                     <x-nav-link :href="route('category.index')" :active="request()->routeIs('category')">
@@ -78,14 +78,14 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('transaction.index')" :active="request()->routeIs('transaction')">
+            <x-responsive-nav-link :href="route('financialMovement.index')" :active="request()->routeIs('financialMovement')">
                 {{ __('Transação') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('cardBankAccount.index')" :active="request()->routeIs('card')">
+            <x-responsive-nav-link :href="route('financialPlanning.index')" :active="request()->routeIs('financialPlanning')">
                 {{ __('Cartão') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('financialInstitution.index')" :active="request()->routeIs('financialInstitution')">
-                {{ __('Instituição') }}
+            <x-responsive-nav-link :href="route('financialAccount.index')" :active="request()->routeIs('financialAccount')">
+                {{ __('Conta') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('category.index')" :active="request()->routeIs('category')">
                 {{ __('Categoria') }}

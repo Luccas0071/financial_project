@@ -16,7 +16,6 @@ class CreateCategoryTable extends Migration
         Schema::create('category', function (Blueprint $table) {
             $table->id();
             $table->string('identification');
-            $table->double('value')->nullable();
             $table->string('color')->nullable();
             $table->unsignedBigInteger('category_id')->nullable(); // Cria a coluna para o ID do usuário
             $table->unsignedBigInteger('user_id'); // Cria a coluna para o ID do usuário

@@ -17,14 +17,15 @@ class CreateFinancialCardTable extends Migration
             
             $table->id();
             $table->string('identification');
-            $table->double('limit');
+            $table->double('balance')->nullable();
+            $table->double('limit')->nullable();
             $table->integer('due_date');
             
-            $table->unsignedBigInteger('financial_institution_id');
+            $table->unsignedBigInteger('financial_account_id');
 
-            $table->foreign('financial_institution_id')
+            $table->foreign('financial_account_id')
                     ->references('id')
-                    ->on('financial_institution')
+                    ->on('financial_account')
                     ->onDelete('cascade');
        
             $table->timestamps();

@@ -2,11 +2,11 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cadastro de Conta Bancaria') }}
+            {{ __('Cadastro de Planejamento') }}
         </h2>
     </x-slot>
 
-    <form action=" {{ route('cardBankAccount.store') }}" method="post">
+    <form action=" {{ route('financialPlanning.store') }}" method="post">
         @csrf
         <div class="container">
             <div class="row justify-content-end mt-3">
@@ -40,9 +40,11 @@
                     <label for="bankAccount" class="form-label">Conta Bancaria:</label>
                     <select class="form-select bankAccount" aria-label="Default select example" id="bankAccount" name="bankAccount">
                         <option selected>Selecione</option>
-                        @foreach($collectionBankAccount as $objBankAccount)
+                        <option value="1">Bradesco</option>
+                        <option value="2">Nubank</option>
+                        {{-- @foreach($collectionBankAccount as $objBankAccount)
                             <option value="{{ $objBankAccount->id}}">{{ $objBankAccount->institution}}</option>
-                        @endforeach
+                        @endforeach --}}
                       </select>
                 </div>
     

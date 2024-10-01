@@ -16,18 +16,8 @@ class CreateFinancialInstitutionTable extends Migration
         Schema::create('financial_institution', function (Blueprint $table) {
             $table->id();
             $table->string('identification');
-            $table->double('balance')->nullable();
-            $table->date('date')->nullable();
-            $table->string('description')->nullable();
-            $table->integer('type')->nullable();
-
-            $table->unsignedBigInteger('user_id');
-
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users')
-                    ->onDelete('cascade');
-
+            $table->string('cnpj')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
         });
     }
